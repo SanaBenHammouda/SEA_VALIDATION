@@ -1,16 +1,16 @@
-# 🎯 Monte Carlo Threading Demo
+# 🎯 Monte Carlo Threading  🎯
 
 **Démonstration des Avantages du Multi-Threading**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> Projet académique réalisé par **Snaa, Jobrane et Imen**  
+> Projet académique réalisé par **Sana , Jobrane et Imen**  
 > Objectif: Comparer les performances entre mono-thread et multi-thread
 
 ---
 
-## ⚡ DÉMARRAGE ULTRA-RAPIDE
+## ⚡ DÉMARRAGE 
 
 ```bash
 # 1. Installer
@@ -22,15 +22,7 @@ python demo_quick.py
 # 3. Démonstration complète (3-5 minutes)
 python main.py
 ```
-
-**📖 Pour la présentation vidéo :**
-1. Lire **SPEECH.md** (script complet)
-2. Suivre **GUIDE_VIDEO_COMPLET.md** (plan détaillé)
-3. Vérifier **CHECKLIST_PRESENTATION.md** (avant d'enregistrer)
-
-**📑 Navigation :** Voir **INDEX.md** pour trouver rapidement tous les documents.
-
----
+ 
 
 ## 📋 Table des Matières
 
@@ -157,28 +149,6 @@ Pour exécuter la démonstration complète (1 million d'échantillons, 5 runs) :
 python main.py
 ```
 
-**Durée estimée** : 3-5 minutes
-
-### Démonstration Rapide
-
-Pour un test rapide (100k échantillons, 3 runs) :
-
-```bash
-python demo_quick.py
-```
-
-**Durée estimée** : 30 secondes
-
-### Ce qui se Passe
-
-1. ✅ Explication de la méthode Monte Carlo
-2. ✅ Exécution mono-thread (référence)
-3. ✅ Exécution multi-thread avec 2, 4, 8 threads
-4. ✅ Calcul des statistiques (moyenne, écart-type, speedup)
-5. ✅ Génération de 4 graphiques professionnels
-6. ✅ Affichage du résumé des résultats
-
----
 
 ## 📁 Structure du Projet
 
@@ -219,20 +189,6 @@ Le programme génère automatiquement 4 graphiques dans le dossier `results/` :
 3. **speedup.png** : Facteur d'accélération (barres + ligne idéale)
 4. **monte_carlo_method.png** : Visualisation de la méthode (points colorés)
 
-### Résultats Typiques
-
-Sur une machine avec 4+ cœurs CPU :
-
-| Configuration | Temps Moyen | Speedup |
-|---------------|-------------|---------|
-| Mono-thread | 1.000s | 1.0x (référence) |
-| Multi-thread (2 threads) | 0.600s | 1.67x |
-| Multi-thread (4 threads) | 0.350s | 2.86x |
-| Multi-thread (8 threads) | 0.250s | 4.0x |
-
-**Conclusion** : Le multi-thread avec 8 threads est **4x plus rapide** ! 🚀
-
----
 
 ## ✅ Avantages du Multi-Threading
 
@@ -247,14 +203,6 @@ Sur une machine avec 4+ cœurs CPU :
 - **Temps d'exécution réduit** : Moins d'attente pour l'utilisateur
 - **Productivité** : Traiter plus de données en moins de temps
 - **Ressources** : Meilleure utilisation du matériel disponible
-
-### 3. Cas d'Usage Réels
-
-Le multi-threading est utilisé partout :
-- 🎮 **Jeux vidéo** : Rendu graphique + physique + IA en parallèle
-- 🌐 **Serveurs web** : Gérer plusieurs requêtes simultanément
-- 📊 **Analyse de données** : Traiter de gros volumes rapidement
-- 🎬 **Traitement vidéo** : Encoder plusieurs frames en parallèle
 
 ---
 
@@ -282,13 +230,6 @@ total_inside += local_inside  # Race condition !
 with lock:
     total_inside += local_inside  # Section critique protégée
 ```
-
-### 3. Diminishing Returns
-
-- **1 → 2 threads** : Speedup ~1.8x ✅
-- **2 → 4 threads** : Speedup ~1.5x ✅
-- **4 → 8 threads** : Speedup ~1.2x ⚠️
-- **8 → 16 threads** : Speedup ~1.05x ❌
 
 **Pourquoi ?** Overhead de synchronisation + limite du nombre de cœurs CPU
 
@@ -360,117 +301,17 @@ def calculate_pi_multi(num_samples, num_threads):
     return pi
 ```
 
-### Points Clés
-
-1. **Division du travail** : `samples_per_thread = total / num_threads`
-2. **Calcul local** : Chaque thread compte ses points sans synchronisation
-3. **Agrégation protégée** : `with lock:` pour éviter les race conditions
-4. **Attente** : `join()` pour attendre que tous les threads terminent
-
----
-
-## 🎤 Speech de Présentation
-
-### Introduction (1 minute)
-
-> "Bonjour ! Nous sommes Snaa, Jobrane et Imen, et aujourd'hui nous allons vous présenter notre projet sur le multi-threading en informatique.
->
-> Notre objectif est simple : vous montrer **concrètement** pourquoi utiliser plusieurs threads peut rendre un programme beaucoup plus rapide.
->
-> Pour cela, nous avons choisi un exemple visuel et facile à comprendre : calculer le nombre Pi en utilisant la méthode Monte Carlo."
-
-### Explication Monte Carlo (2 minutes)
-
-> "Qu'est-ce que la méthode Monte Carlo ? C'est une technique qui utilise le hasard pour résoudre des problèmes mathématiques.
->
-> Imaginez que vous lancez des fléchettes au hasard sur une cible carrée qui contient un cercle. Si vous lancez beaucoup de fléchettes, vous pouvez calculer Pi en comptant combien tombent dans le cercle.
->
-> [MONTRER LE GRAPHIQUE monte_carlo_method.png]
->
-> Voici exactement ce que fait notre programme : il génère des millions de points aléatoires et compte combien tombent dans le cercle. Plus on génère de points, plus le résultat est précis !"
-
-### Démonstration Live (3 minutes)
-
-> "Maintenant, passons à la démonstration. Nous allons comparer deux approches :
->
-> 1. **Mono-thread** : Un seul travailleur qui génère tous les points un par un
-> 2. **Multi-thread** : Plusieurs travailleurs qui génèrent des points en parallèle
->
-> [EXÉCUTER python main.py]
->
-> Comme vous pouvez le voir, le programme exécute d'abord la version mono-thread, puis la version multi-thread avec 2, 4 et 8 threads. Pour chaque configuration, il fait 5 exécutions pour obtenir des statistiques fiables."
-
-### Analyse des Résultats (2 minutes)
-
-> "Regardons maintenant les résultats !
->
-> [MONTRER LE TABLEAU DANS LA CONSOLE]
->
-> - Mono-thread : 1.0 seconde
-> - Multi-thread avec 8 threads : 0.25 seconde
->
-> **C'est 4 fois plus rapide !**
->
-> [MONTRER execution_times.png]
->
-> Ce graphique montre clairement la différence de temps. Plus on utilise de threads, plus c'est rapide.
->
-> [MONTRER speedup.png]
->
-> Ce graphique montre le facteur d'accélération. La ligne rouge représente le speedup idéal (linéaire), et les barres montrent notre speedup réel. On voit qu'on s'approche de l'idéal !"
-
-### Explication du Code (2 minutes)
-
-> "Comment ça marche techniquement ?
->
-> [MONTRER src/monte_carlo_mono.py]
->
-> Dans la version mono-thread, on a une simple boucle qui génère tous les points un par un. C'est simple mais lent.
->
-> [MONTRER src/monte_carlo_multi.py]
->
-> Dans la version multi-thread, on divise le travail entre plusieurs threads. Chaque thread génère sa part de points en parallèle. La partie critique est la synchronisation : on utilise un **lock** pour éviter que plusieurs threads modifient le même compteur en même temps. C'est ce qu'on appelle éviter les **race conditions**."
-
-### Avantages et Limitations (1 minute)
-
-> "Quels sont les avantages du multi-threading ?
->
-> ✅ **Performance** : 2 à 4 fois plus rapide sur CPU multi-cœur
-> ✅ **Efficacité** : Meilleure utilisation des ressources
-> ✅ **Scalabilité** : Plus de threads = plus rapide
->
-> Mais il y a aussi des limitations :
->
-> ⚠️ **Overhead** : Créer des threads prend du temps
-> ⚠️ **Synchronisation** : Les locks ralentissent l'exécution
-> ⚠️ **Diminishing returns** : Au-delà d'un certain nombre de threads, le gain diminue"
-
-### Conclusion (1 minute)
-
-> "En conclusion, le multi-threading est un outil puissant pour améliorer les performances d'un programme. Notre démonstration montre un gain de **4x** avec 8 threads !
->
-> Le multi-threading est utilisé partout : dans les jeux vidéo, les serveurs web, l'analyse de données, et bien plus encore.
->
-> Merci de votre attention ! Avez-vous des questions ?"
-
----
 
 ## 👥 Auteurs
 
 **Projet réalisé par :**
-- **Snaa**
-- **Jobrane**
-- **Imen**
+- **Sana Ben Hammouda**
+- **Mohamed Jobrane Ben Salah **
+- **Imen Sebteoui **
 
 **Contexte :** Projet académique - Module SEA  
 **Date :** 2025  
 **Objectif :** Démonstration des avantages du multi-threading
-
----
-
-## 📝 Licence
-
-Ce projet est à usage éducatif uniquement.
 
 ---
 
@@ -479,5 +320,3 @@ Ce projet est à usage éducatif uniquement.
 Merci à notre professeur pour ce projet intéressant qui nous a permis de comprendre concrètement les avantages du multi-threading !
 
 ---
-
-**Bonne présentation ! 🎓🚀**
