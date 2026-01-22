@@ -10,7 +10,7 @@
 
 ---
 
-## ⚡ DÉMARRAGE ULTRA-RAPIDE
+## ⚡ DÉMARRAGE 
 
 ```bash
 # 1. Installer
@@ -22,15 +22,7 @@ python demo_quick.py
 # 3. Démonstration complète (3-5 minutes)
 python main.py
 ```
-
-**📖 Pour la présentation vidéo :**
-1. Lire **SPEECH.md** (script complet)
-2. Suivre **GUIDE_VIDEO_COMPLET.md** (plan détaillé)
-3. Vérifier **CHECKLIST_PRESENTATION.md** (avant d'enregistrer)
-
-**📑 Navigation :** Voir **INDEX.md** pour trouver rapidement tous les documents.
-
----
+ 
 
 ## 📋 Table des Matières
 
