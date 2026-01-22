@@ -90,7 +90,8 @@ Imaginez que vous lancez des fléchettes au hasard sur une cible :
 
 Plus on lance de points, plus le résultat est précis !
 
----
+---<img width="2848" height="2965" alt="monte_carlo_method" src="https://github.com/user-attachments/assets/6e273cdc-829f-4601-9c64-d3b1b4836270" />
+
 
 ## ⚡ Pourquoi le Multi-Threading ?
 
@@ -185,9 +186,15 @@ monte-carlo-threading-demo/
 Le programme génère automatiquement 4 graphiques dans le dossier `results/` :
 
 1. **execution_times.png** : Comparaison des temps d'exécution (barres)
-2. **scalability.png** : Temps vs nombre de threads (ligne)
-3. **speedup.png** : Facteur d'accélération (barres + ligne idéale)
-4. **monte_carlo_method.png** : Visualisation de la méthode (points colorés)
+ <img width="2967" height="1765" alt="execution_times" src="https://github.com/user-attachments/assets/8a341b9a-8663-44c8-abc0-8d71a733ac3f" />
+
+3. **scalability.png** : Temps vs nombre de threads (ligne)
+ <img width="2967" height="1765" alt="scalability" src="https://github.com/user-attachments/assets/3feadb67-5ee2-48d4-a7b6-6c6c65f42705" />
+
+5. **speedup.png** : Facteur d'accélération (barres + ligne idéale)
+   <img width="2967" height="1766" alt="speedup" src="https://github.com/user-attachments/assets/ebf72b8e-c5fe-4923-9b1a-5d6de42bcbde" />
+
+7. **monte_carlo_method.png** : Visualisation de la méthode (points colorés)
 
 
 ## ✅ Avantages du Multi-Threading
