@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> Projet académique réalisé par **Snaa, Jobrane et Imen**  
+> Projet académique réalisé par **Sana , Jobrane et Imen**  
 > Objectif: Comparer les performances entre mono-thread et multi-thread
 
 ---
