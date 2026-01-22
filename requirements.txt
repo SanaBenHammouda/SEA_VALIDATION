@@ -1,0 +1,3 @@
+# Dépendances pour le projet Monte Carlo Threading Demo
+matplotlib>=3.5.0
+psutil>=5.9.0
